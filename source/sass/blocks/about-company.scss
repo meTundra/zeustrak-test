@@ -1,0 +1,106 @@
+.about-company__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-company__heading {
+  @include text-reset;
+  position: relative;
+  margin-bottom: 46px;
+  font-family: $font-open-sans;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: $text-gray;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background-color: $red;
+  }
+
+  @include media-tablet {
+    margin-bottom: 30px;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  @include media-mobile {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.about-company__text {
+  @include text-reset;
+  @include standard-text;
+  margin-bottom: 9px;
+  padding-left: 37px;
+  width: 555px;
+  text-align: center;
+
+  & span {
+    font-weight: 600;
+  }
+
+  @include media-tablet {
+    width: 500px;
+  }
+
+  @include media-mobile {
+    padding-left: 0;
+    width: auto;
+    max-width: 400px;
+    min-width: 300px;
+  }
+}
+
+.about-company__text--slogan {
+  margin-bottom: 34px;
+  font-weight: 600;
+  color: $red;
+  text-transform: uppercase;
+}
+
+.about-company__link {
+  @include link-reset;
+  @include standard-text(600);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 62px;
+  width: 166px;
+  height: 40px;
+  background-color: $red;
+  border-radius: 5px;
+  box-shadow: 0 2px 0 0 $text-gray;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 3px 0 0 $text-gray;
+  }
+
+  &:active {
+    opacity: 0.9;
+  }
+
+  @include media-mobile {
+    margin-bottom: 30px;
+  }
+}
+
+.about-company__reviews {
+  margin-bottom: 54px;
+
+  @include media-mobile {
+    margin-bottom: 24px;
+  }
+}

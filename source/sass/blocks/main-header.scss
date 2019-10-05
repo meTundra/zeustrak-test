@@ -1,0 +1,38 @@
+.main-header {
+  padding-top: 20px;
+}
+
+.main-header__logo-container {
+  display: flex;
+  margin-bottom: 20px;
+
+  @include media-tablet {
+    justify-content: center;
+  }
+}
+
+.main-header__logo {
+  @include link-reset;
+  @include standard-text(600);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 102px;
+
+  background-color: $gray;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @include media-tablet {
+    width: 200px;
+    height: 73px;
+  }
+}

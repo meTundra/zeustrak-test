@@ -1,0 +1,41 @@
+.company-reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.company-reviews__heading {
+  @include text-reset;
+  margin-bottom: 34px;
+  font-family: $font-open-sans;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: $text-gray;
+
+  @include media-tablet {
+    margin-bottom: 24px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  @include media-mobile {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+.company-reviews__list {
+  @include list-reset;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  @include media-mobile {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}

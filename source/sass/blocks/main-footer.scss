@@ -1,0 +1,26 @@
+.main-footer {
+  background-color: $gray;
+}
+
+.main-footer__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 12px;
+}
+
+.main-footer__link {
+  @include link-reset;
+  @include standard-text(600);
+  margin-bottom: 12px;
+  border-bottom: 1px solid #a7a7a7;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

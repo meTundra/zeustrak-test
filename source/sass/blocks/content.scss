@@ -1,0 +1,18 @@
+.content {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: $desktop-width;
+
+  @include media-tablet {
+    width: auto;
+    min-width: $tablet-width;
+    max-width: $tablet-max-width;
+  }
+
+  @include media-mobile {
+    min-width: $mobile-width;
+    max-width: $mobile-max-width;
+  }
+}

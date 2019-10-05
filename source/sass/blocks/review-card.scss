@@ -1,0 +1,141 @@
+.review-card {
+  box-sizing: border-box;
+  display: flex;
+  padding-top: 38px;
+  padding-left: 37px;
+  width: 580px;
+
+  border: 3px solid $gray;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &:hover {
+    border-color: $red;
+    cursor: pointer;
+
+    .review-card__avatar {
+      border: 3px solid $red;
+    }
+
+    .review-card__name {
+      color: $red;
+
+      &::before {
+        width: 70px;
+      }
+    }
+
+    .review-card__review {
+      color: $red;
+    }
+  }
+
+  @include media-tablet {
+    padding-top: 19px;
+    padding-left: 19px;
+    padding-right: 15px;
+    width: auto;
+    max-width: 430px;
+    min-width: 364px;
+  }
+
+  @include media-mobile {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 500px;
+    min-width: 300px;
+
+    &:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.review-card__avatar {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 41px;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  @include media-tablet {
+    margin-right: 20px;
+    width: 60px;
+    height: 60px;
+  }
+
+  @include media-mobile {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.review-card__text {
+  width: 390px;
+
+  @include media-tablet {
+    width: auto;
+    max-width: 310px;
+  }
+
+  @include media-mobile {
+    max-width: 360px;
+    min-width: 274px;
+  }
+}
+
+.review-card__name {
+  @include text-reset;
+  @include standard-text(600);
+  position: relative;
+  margin-bottom: 32px;
+  font-size: 18px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 1px;
+    bottom: -13px;
+    width: 35px;
+    height: 3px;
+    background-color: $red;
+    transition-duration: 0.3s;
+  }
+
+  @include media-tablet {
+    margin-bottom: 22px;
+  }
+
+  @include media-mobile {
+    text-align: center;
+    &::before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.review-card__review {
+  @include text-reset;
+  @include standard-text(normal, italic);
+  margin-bottom: 32px;
+  font-size: 15px;
+
+  @include media-tablet {
+    font-size: 12px;
+  }
+
+  @include media-mobile {
+    text-align: center;
+  }
+}
