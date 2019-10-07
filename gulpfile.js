@@ -1,19 +1,23 @@
 "use strict";
 
-var gulp = require("gulp");
-var plumber = require("gulp-plumber");
-var sourcemap = require("gulp-sourcemaps");
-var sass = require("gulp-sass");
-var postcss = require("gulp-postcss");
-var autoprefixer = require("autoprefixer");
-var server = require("browser-sync").create();
-var csso = require("gulp-csso");
-var rename = require("gulp-rename");
-var imagemin = require("gulp-imagemin");
-var webp = require("gulp-webp");
-var concat = require('gulp-concat');
-var uglify = require("gulp-uglify");
-var del = require("del");
+const gulp = require("gulp");
+const plumber = require("gulp-plumber");
+const sourcemap = require("gulp-sourcemaps");
+const sass = require("gulp-sass");
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const server = require("browser-sync").create();
+const csso = require("gulp-csso");
+const rename = require("gulp-rename");
+const imagemin = require("gulp-imagemin");
+const webp = require("gulp-webp");
+const concat = require('gulp-concat');
+const replace = require("gulp-replace");
+const posthtml = require("gulp-posthtml");
+const include = require("posthtml-include");
+const uglify = require("gulp-uglify");
+const del = require("del");
+const babel = require('gulp-babel');
 
 gulp.task("css", function () {
   return gulp.src("source/sass/style.scss")
@@ -37,7 +41,7 @@ gulp.task("server", function () {
     ui: false
   });
 
-  gulp.watch("source/sass/**/*.{sass,scss}", gulp.series("css"));
+  gulp.watch("source/sass/**/*.{sass,sass}", gulp.series("css"));
   gulp.watch("source/img/svg/icon-*.svg", gulp.series("html", "refresh"));
   gulp.watch("source/*.html", gulp.series("html", "refresh"));
   gulp.watch("source/js/*.js", gulp.series("scripts"));
@@ -74,11 +78,17 @@ gulp.task("webp", function () {
 
 gulp.task("html", function () {
   return gulp.src("source/*.html")
+    .pipe(posthtml([
+      include()
+    ]))
     .pipe(gulp.dest("build"));
 });
 
 gulp.task("scripts", function () {
   return gulp.src("source/js/*.js")
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(concat('main.js'))
