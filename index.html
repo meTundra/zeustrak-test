@@ -6,41 +6,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="css/style.min.css" rel="stylesheet" type="text/css">
   </head>
-  <body class="page">
-    <header class="page__header  main-header">
-      <div class="main-header__logo-container  content">
-        <a class="main-header__logo  logo" href="#">
-          Лого
-        </a>
-      </div>
-
-      <nav class="main-header__nav  main-nav">
-        <div class="main-nav__content  content">
-          <button class="main-nav__button  js-button">
-            <span class="visually-hidden">Открыть меню</span>
-          </button>
-          <ul class="main-nav__list  js-menu">
-            <li>
-              <a class="main-nav__link  main-nav__link--active" href="#">О компании</a>
-            </li>
-            <li>
-              <a class="main-nav__link" href="#">Услуги</a>
-            </li>
-            <li>
-              <a class="main-nav__link" href="#">О продукте</a>
-            </li>
-            <li>
-              <a class="main-nav__link" href="#">Контакты</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
-    <main class="page__main  main-content">
+  <body class="page" id="about-company">
+    <main class="page__main">
       <h1 class="visually-hidden">Сайт Компании</h1>
-      <section class="main-content__about-company  about-company">
-        <div class="about-company__content  content">
+      <section>
+        <div class="about-company  content">
           <h2 class="about-company__heading">О компании</h2>
           <p class="about-company__text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et <span>dolore magna aliqua</span>.
@@ -56,7 +26,7 @@
           <div class="about-company__reviews  company-reviews">
             <h3 class="company-reviews__heading">Отзывы наших покупателей</h3>
             <ul class="company-reviews__list">
-              <li class="company-reviews__item  review-card">
+              <li class="review-card">
                 <div class="review-card__avatar">
                   <picture>
                     <source srcset="img/photo-tablet.png" media="(max-width: 1199px)">
@@ -73,7 +43,7 @@
                 </div>
               </li>
 
-              <li class="company-reviews__item  review-card">
+              <li class="review-card">
                 <div class="review-card__avatar">
                   <picture>
                     <source type="image/webp" srcset="img/photo-tablet.webp" media="(max-width: 1199px)">
@@ -95,7 +65,7 @@
             </ul>
           </div>
 
-          <table class="about-company__schedule  schedule">
+          <table class="company-schedule">
             <caption>Часы работы</caption>
 
             <tbody>
@@ -118,12 +88,6 @@
         </div>
       </section>
     </main>
-
-    <footer class="page__footer  main-footer">
-      <div class="main-footer__content  content">
-        <a class="main-footer__link" href="tel:+79999999999">+7 (999) 999 99 99</a>
-      </div>
-    </footer>
     <script src="js/main.min.js"></script>
   </body>
 </html>
